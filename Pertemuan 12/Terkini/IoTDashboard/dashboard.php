@@ -66,7 +66,7 @@ $idruang = $_GET['idruang'];
 
         </div>
         <nav>
-        <ul class="list">
+            <ul class="list">
                 <li><a href="dashboard.php" class="active">Home</a></li>
                 <li><a href="index_d.php">Device</a></li>
                 <li><a href="index_s.php">Sensor</a></li>
@@ -124,9 +124,9 @@ $idruang = $_GET['idruang'];
                                 </div>
 
                             </div>
-                            <?php 
+                            <?php
                             if ($querysuhu1['Suhu'] > $querysuhu1['Nilai_suhu'] || $querykelembapan1['kelembapan'] > $querykelembapan1['Nilai_kelembapan']) {
-                                
+
                                 $id_device = $device['Id_device'];
                                 $device = mysqli_query($conn, "INSERT INTO Ruangan_device (Ruangiddevice, Id_ruangan, Id_device, Kondisi) VALUES (NULL, '$idruang', '$id_device', 'Menyala')");
                                 # code...
@@ -144,11 +144,11 @@ $idruang = $_GET['idruang'];
                     <h2 style="color: white; font-size: 40px;"><?= $querysuhu1['Suhu']; ?> &deg;C </h2>
 
                     <?php
-                    $suhunormal = (int)$querysuhu1['Nilai_suhu'];
-                    $suhusekarang = (int)$querysuhu1['Suhu'];
-                    $kurang = $suhusekarang - $suhunormal;
-                    
-                    $tambah = $suhunormal - $suhusekarang;
+                        $suhunormal = (int)$querysuhu1['Nilai_suhu'];
+                        $suhusekarang = (int)$querysuhu1['Suhu'];
+                        $kurang = $suhusekarang - $suhunormal;
+
+                        $tambah = $suhunormal - $suhusekarang;
 
 
 
@@ -156,15 +156,19 @@ $idruang = $_GET['idruang'];
                             echo "<h2 style='color: white; font-size: 40px;'>Normal</h2>";
                         } elseif ($querysuhu1['Suhu'] > $querysuhu1['Nilai_suhu']) {
                             echo "<h2 style='color: white; font-size: 40px; background-color: red;'><i class='fas fa-exclamation-triangle'></i> Suhu Ruangan melebihi Batas</h2>";
-                            
-                            ?><script>alert('Suhu melebihi batas normal sebesar <?php echo $kurang;?>9\xB0 C')</script><?php
-                    ?><a href="fix.php?id_suhu=<?= $querysuhu1['Id_suhu']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black; margin-top: 10px;">Fix</a>
+
+                    ?><script>
+                            alert('Suhu melebihi batas normal sebesar <?php echo $kurang; ?>9\xB0 C')
+                        </script><?php
+                                    ?><a href="fix.php?id_suhu=<?= $querysuhu1['Id_suhu']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black; margin-top: 10px;">Fix</a>
                     <?php
                         } elseif ($querysuhu1['Suhu'] < $querysuhu1['Nilai_suhu']) {
                             echo "<h2 style='color: white; font-size: 40px; background-color: red;'><i class='fas fa-exclamation-triangle'></i> Suhu Ruangan Kurang optimal</h2>";
-                            ?><script>alert('Suhu kurang optimal sebesar <?php echo  $tambah;?> 9\xB0 C')</script><?php
-                    ?><a href="fix.php?id_suhu=<?= $querysuhu1['Id_suhu']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a> <?php
-                                                                                                                                                                                                                                                                                                                                            } ?>
+                    ?><script>
+                            alert('Suhu kurang optimal sebesar <?php echo  $tambah; ?> 9\xB0 C')
+                        </script><?php
+                                    ?><a href="fix.php?id_suhu=<?= $querysuhu1['Id_suhu']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a> <?php
+                                                                                                                                                                            } ?>
                 </div>
 
             </div>
@@ -175,28 +179,30 @@ $idruang = $_GET['idruang'];
                 <div class="content">
                     <h2 style="color: white; font-size: 40px;"><?= $querykelembapan1['kelembapan']; ?>%</h2>
                     <?php
-                    $nilaisensor = $querykelembapan1['kelembapan'];
-                    $nilainormal = $querykelembapan1['Nilai_kelembapan'];
+                        $nilaisensor = $querykelembapan1['kelembapan'];
+                        $nilainormal = $querykelembapan1['Nilai_kelembapan'];
 
 
 
 
                         if ($querykelembapan1['Nilai_kelembapan'] == $querykelembapan1['kelembapan']) {
                             echo "<h2 style='color: white; font-size: 40px;'>Normal</h2>";
-
-
                         } elseif ($querykelembapan1['kelembapan'] > $querykelembapan1['Nilai_kelembapan']) {
                             echo "<h2 style='color: white; font-size: 40px; background-color: red;'><i class='fas fa-exclamation-triangle'></i> Kelembapan melebihi Batas</h2>";
-                            ?><script>alert('Kelembapan melebihi batas normal sebesar <?php echo $nilaisensor-$nilainormal;?>%')</script><?php
-                    ?><a href="fix.php?id_kelembapan=<?= $querykelembapan1['Id_kelembapan']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a>
+                    ?><script>
+                            alert('Kelembapan melebihi batas normal sebesar <?php echo $nilaisensor - $nilainormal; ?>%')
+                        </script><?php
+                                    ?><a href="fix.php?id_kelembapan=<?= $querykelembapan1['Id_kelembapan']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a>
                     <?php
-                        } elseif ($sensor['kelembapan'] < $sensor['Nilai_kelembapan']) {
+                        } elseif ($querykelembapan1['kelembapan'] < $querykelembapan1['Nilai_kelembapan']) {
                             echo "<h2 style='color: white; font-size: 40px; background-color: red;'><i class='fas fa-exclamation-triangle'></i> Kelembapan Ruangan Kurang optimal</h2>";
-                            ?><script>alert('Kelembapan Ruangan Kurang optimal sebesar <?php echo $nilainormal-$nilaisensor;?>%')</script><?php
+                    ?><script>
+                            alert('Kelembapan Ruangan Kurang optimal sebesar <?php echo $nilainormal - $nilaisensor; ?>%')
+                        </script><?php
 
-                    ?><a href="fix.php?id_kelembapan=<?= $sensor['Id_kelembapan']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a> <?php
-                                                                                                                                                                                    }
-                                                                                                                                                                                        ?>
+                                    ?><a href="fix.php?id_kelembapan=<?= $querykelembapan1['Id_kelembapan']; ?>&id_ruang=<?= $idruang ?>" style="color: white; background-color: black;margin-top: 10px;">Fix</a> <?php
+                                                                                                                                                                                                }
+                                                                                                                                                                                                    ?>
                 </div>
 
             </div>

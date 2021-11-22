@@ -11,16 +11,18 @@ if(isset($_POST['simpan'])){
 	
 	//jika tombol tambah benar di klik maka lanjut prosesnya
 	$Id_ruangan = $_POST['Id_ruangan'];
+
     $Nama_ruangan = $_POST['Nama_ruangan'];
     $Deskripsi_ruangan = $_POST['Deskripsi_ruangan'];
     $Nilai_suhu = $_POST['Nilai_suhu'];
     $Nilai_kelembapan = $_POST['Nilai_kelembapan'];
-    $Tanggal = $_POST['Tanggal']
-
+    $Tanggal = $_POST['Tanggal'];
+	$query = "UPDATE ruangan SET Nama_ruangan = '$Nama_ruangan', Deskripsi_ruangan = '$Deskripsi_ruangan', Nilai_suhu = '$Nilai_suhu', Nilai_kelembapan = '$Nilai_kelembapan', Tanggal = '$Tanggal' WHERE Id_ruangan = $Id_ruangan";
 	
 	//melakukan query dengan perintah UPDATE untuk update data ke database dengan kondisi WHERE siswa_id='$id' <- diambil dari inputan hidden id
-	$update = mysql_query("UPDATE sensor SET Id_ruangan='$Id_ruangan', Nama_ruangan='$Nama_ruangan', Deskripsi='$Deskripsi_ruangan, Nilai_suhu='$Nilai_suhu', Nilai_kelembapan='$Nilai_kelembapan', Tanggal= '$Tanggal'  WHERE Id_ruangan='$id'") or die(mysql_error());
-	
+	$update = mysqli_query($koneksi,$query) or die(mysqli_error($koneksi));
+	$updated = mysqli_affected_rows($koneksi);
+	print_r($updated);
 	//jika query update sukses
 	if($update){
 		

@@ -23,8 +23,7 @@
     <div class="container">
       <div class="brand-title">Tambah Data Sensor </div>
       <div class="inputs">
-      <label>Id_sensor</label>
-      <input type="text" name="Id_sensor" required>
+     
       <label>Nama sensor</label>
       <input type="text" name="Nama_sensor" size="30" required>
        <label>Deskripsi_sensor</label>

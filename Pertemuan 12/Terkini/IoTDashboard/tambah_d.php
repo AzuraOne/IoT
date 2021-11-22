@@ -23,8 +23,7 @@
     <div class="container">
       <div class="brand-title">Tambah Data Device </div>
       <div class="inputs">
-      <label>Id_Device</label>
-      <input type="text" name="id_device" required>
+      
       <label>Nama Device</label>
       <input type="text" name="nama_device" size="30" required>
        <label>Deskripsi</label>

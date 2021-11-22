@@ -24,7 +24,7 @@
             <ul class="list">
                 <li><a href="dashboard.php">Home</a></li>
                 <li><a href="index_d.php">Device</a></li>
-                <li><a href="index_s.php">Sensor</a></li>
+                <li><a href="index_s.php" class="active">Sensor</a></li>
                 <li><a href="index_r.php">Ruangan</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>

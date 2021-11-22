@@ -98,3 +98,7 @@ section .box .content {
   align-items: center;
   padding: 10px;
 }
+table td {
+  color: white;
+  background-color: white;
+}

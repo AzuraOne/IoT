@@ -2,28 +2,18 @@
 error_reporting(0);
 include 'koneksi_r.php';
 
-if (isset($_GET['id']))
-{
-    $id_device = $_GET['id'];
+if (isset($_GET['id'])) {
+    $id_ruangan = $_GET['id'];
+    
 
-    $query ="DELETE from device where id_device='$id_device'";
+    $query = "DELETE from ruangan where Id_ruangan='$id_ruangan'";
     $result = mysqli_query($koneksi, $query);
-
-    if (!$result)
-    {
-        die("Data gagal di tambahakan; ".mysqli_errno);
-
-if (!$result)
-    {
-        die("Data gagal di tambahakan; ".mysqli_errno($koneksi). mysqli_error($koenksi));
-
-    }
-    else
-    {
+    $resulted = mysqli_affected_rows($koneksi);
+    
+    if ($resulted == 0) {
+        die("Data gagal di tambahakan; " . mysqli_errno($koneksi) . mysqli_error($koenksi));
+    } else {
         echo "<script>
-        alert('Data berhasil dihapus');window.location.href='hapus_r.php'</script>";
-
+    alert('Data berhasil dihapus');window.location.href='index_r.php'</script>";
     }
 }
-}
-?>

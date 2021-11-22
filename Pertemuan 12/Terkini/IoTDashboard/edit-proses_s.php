@@ -12,13 +12,14 @@ if(isset($_POST['simpan'])){
 	$Kondisi_sensor		= $_POST['Kondisi_sensor'];
 	$Tanggal_buat		= $_POST['Tanggal_buat'];	
 	
+	$query = "UPDATE sensor SET Id_sensor='$Id_sensor', Nama_sensor='$Nama_sensor', Deskripsi_sensor='$Deskripsi_sensor', 
+	Kondisi_sensor='$Kondisi_sensor', Tanggal_buat='$Tanggal_buat' WHERE Id_sensor='$Id_sensor'";
 	
 	//melakukan query dengan perintah UPDATE untuk update data ke database dengan kondisi WHERE siswa_id='$id' <- diambil dari inputan hidden id
-	$update = mysql_query("UPDATE sensor SET Id_sensor='$Id_sensor', Nama_sensor='$Nama_sensor', Deskripsi_sensor='$Deskripsi_sensor', 
-	Kondisi_sensor='$Kondisi_sensor', Tanggal_buat='$Tanggal_buat' WHERE Id_sensor='$id'") or die(mysql_error());
-	
+	$update = mysqli_query($koneksi,$query) or die(mysqli_error($koneksi));
+	$updated = mysqli_affected_rows($koneksi);
 	//jika query update sukses
-	if($update){
+	if($updated){
 		
 		echo 'Data berhasil di simpan! ';		//Pesan jika proses simpan sukses
 		echo '<a href="edit_s.php?id='.$id.'">Kembali</a>';	//membuat Link untuk kembali ke halaman edit

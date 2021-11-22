@@ -5,7 +5,9 @@ if (isset($_GET["id"])) {
     $id = ($_GET["id"]);
 
     $result = mysqli_query($koneksi, "SELECT * FROM device WHERE id_device = '$id'");
+    
     while($row = mysqli_fetch_array($result)) {
+        
         $Id_device = $row["Id_device"];
         $Nama_device= $row["Nama_device"];
         $Deskripsi= $row["Deskripsi"];
@@ -37,11 +39,11 @@ if (isset($_GET["id"])) {
       <div class="brand-title">Edit Data Device </div>
     <div class="inputs">
     <label>Id Device</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="ID Device" value="<?= $Id_device; ?>" name="Id_device" readonly/>
      <label>Nama Device</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Nama Device" value="<?=$Nama_device; ?>" name="Nama_device"/>
      <label>Deskripsi</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Deskripsi" value="<?= $Deskripsi;?>" name="Deskripsi"/>
 			<tr>
 				<td>&nbsp;</td>
 				<td></td>

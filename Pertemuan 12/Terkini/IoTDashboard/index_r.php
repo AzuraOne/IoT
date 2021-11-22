@@ -25,7 +25,7 @@
                 <li><a href="dashboard.php">Home</a></li>
                 <li><a href="index_d.php">Device</a></li>
                 <li><a href="index_s.php">Sensor</a></li>
-                <li><a href="index_r.php">Ruangan</a></li>
+                <li><a href="index_r.php" class="active">Ruangan</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
 
@@ -70,8 +70,8 @@
                         <td><?php echo $row['Nilai_kelembapan'];?></td>
                         <td><?php echo $row['Tanggal'];?></td>
                          <td scope="row">
-                           <a href="edit_r.php?id=<?php echo $row['id_device'];?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                           <a href="hapus_r.php?id=<?php echo $row['id_device'];?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
+                           <a href="edit_r.php?id=<?php echo $row['Id_ruangan'];?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                           <a href="hapus_r.php?id=<?php echo $row['Id_ruangan'];?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
                         </td>
                   </tr>
                   <?php } ?>

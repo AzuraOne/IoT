@@ -23,10 +23,11 @@
     <div class="container">
       <div class="brand-title">Tambah Data Ruangan </div>
       <div class="inputs">
-      <label>Id_Ruangan</label>
-      <input type="text" name="Id_ruangan" required>
+      
       <label>Nama Ruangan</label>
       <input type="text" name="Nama_ruangan" size="30" required>
+      <label>Deskripsi</label>
+      <input type="text" name="Deskripsi_ruangan" size="30" required >
        <label>Nilai Suhu</label>
       <input type="text" name="Nilai_suhu" size="30" required>
        <label>Nilai Kelembapan</label>

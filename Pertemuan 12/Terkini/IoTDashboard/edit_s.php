@@ -39,15 +39,15 @@ if (isset($_GET["id"])) {
       <div class="brand-title">Edit Data Sensor </div>
     <div class="inputs">
     <label>Id Sensor</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Id Sensor" value="<?= $Id_sensor;  ?>" name="Id_sensor" readonly/>
      <label>Nama sensor</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Nama Sensor" value="<?= $Nama_sensor;?>" name="Nama_sensor"/>
      <label>Deskripsi sensor</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="" name="Deskripsi_sensor"  value="<?= $Deskripsi_sensor;  ?>"/>
     <label>Kondisi sensor</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="" name="Kondisi_sensor"  value="<?= $Kondisi_sensor;  ?>"/>
     <label>Tanggal buat</label>
-    <input type="date" placeholder="" />
+    <input type="date" placeholder="" name="Tanggal_buat"  value="<?= $Tanggal_buat;  ?>"/>
 			<tr>
 				<td>&nbsp;</td>
 				<td></td>

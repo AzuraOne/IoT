@@ -39,16 +39,17 @@ if (isset($_GET["id"])) {
 		<div class="container">
       <div class="brand-title">Edit Ruangan </div>
     <div class="inputs">
+        <input type="hidden" name="Id_ruangan" value="<?= $id;?>">
      <label>Nama_ruangan</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Nama Ruangan" name="Nama_ruangan" value="<?= $Nama_ruangan;?>"/>
      <label>Deskripsi_ruangan</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Deskripsi ruangan" name="Deskripsi_ruangan" value="<?= $Deskripsi_ruangan;?>" />
     <label>Nilai_suhu</label>
-    <input type="text" placeholder="" />
+    <input type="text"placeholder="Nilai Suhu" name="Nilai_suhu" value="<?= $Nilai_suhu;?>" />
     <label>Nilai_kelembapan</label>
-    <input type="text" placeholder="" />
+    <input type="text" placeholder="Nilai Kelembapan" name="Nilai_kelembapan" value="<?= $Nilai_kelembapan;?>"/>
     <label>Tanggal</label>
-    <input type="date" placeholder="" />
+    <input type="date"placeholder="Tanggal" name="Tanggal" value="<?= $Tanggal;?>" />
 			<tr>
 				<td>&nbsp;</td>
 				<td></td>

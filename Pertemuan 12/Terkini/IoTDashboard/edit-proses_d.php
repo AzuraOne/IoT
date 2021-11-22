@@ -10,15 +10,16 @@ if(isset($_POST['simpan'])){
 	$Nama_device	= $_POST['Nama_device'];		
 	$Deskripsi		= $_POST['Deskripsi'];	
 	
-	
+	$query = "UPDATE device SET Nama_device = '$Nama_device' WHERE Id_device = '$Id_device'";
 	//melakukan query dengan perintah UPDATE untuk update data ke database dengan kondisi WHERE siswa_id='$id' <- diambil dari inputan hidden id
-	$update = mysql_query("UPDATE device SET Id_device='$Id_device', Nama_device='$Nama_device', Deskripsi='$Deskripsi' WHERE Id_device='$id'") or die(mysql_error());
-	
+	$update = mysqli_query($koneksi,$query) or die(mysqli_error($koneksi));
+	$updated = mysqli_affected_rows($koneksi);
+
 	//jika query update sukses
-	if($update){
+	if($updated){
 		
-		echo 'Data berhasil di simpan! ';		//Pesan jika proses simpan sukses
-		echo '<a href="edit_d.php?id='.$id.'">Kembali</a>';	//membuat Link untuk kembali ke halaman edit
+		echo "<script>alert('Data berhasil di simpan!')</script>";		//Pesan jika proses simpan sukses
+		// header('location: index_d.php');	//membuat Link untuk kembali ke halaman edit
 		
 	}else{
 		

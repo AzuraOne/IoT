@@ -23,7 +23,7 @@
         <nav>
             <ul class="list">
                 <li><a href="dashboard.php">Home</a></li>
-                <li><a href="index_d.php">Device</a></li>
+                <li><a href="index_d.php" class="active">Device</a></li>
                 <li><a href="index_s.php">Sensor</a></li>
                 <li><a href="index_r.php">Ruangan</a></li>
                 <li><a href="logout.php">Logout</a></li>
@@ -35,7 +35,7 @@
 
 
 <div class="container my-3">
-  <h1 style="text-align: center;" class=".text-white">Informasi Device</h1>
+  <h1 style="text-align: center;" class="text-white">Informasi Device</h1>
   <br>
   <center><a class="btn btn-white" href="tambah_d.php">
   Add Data</a></center>
