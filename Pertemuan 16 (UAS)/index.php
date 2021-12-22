@@ -1,10 +1,12 @@
 <?php 
 include 'config.php';
+date_default_timezone_set('Asia/Jakarta');
+$date = date('m/d/Y h:i:s a', time());
 
 $suhu = $_GET['suhu'];
-$password = $_GET['password'];
 
-$sql = "INSERT INTO sensor_suhu (Id_suhu, Suhu, Tanggal_suhu, Id_ruangan) VALUES (NULL, '$suhu', '22-12-2021 15:00:00', '1')";
+
+$sql = "INSERT INTO sensor_suhu (Id_suhu, Suhu, Tanggal_suhu, Id_ruangan) VALUES (NULL, '$suhu', '$date', '1')";
 
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
