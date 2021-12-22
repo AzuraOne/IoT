@@ -8,6 +8,6 @@ Program Control.py berfungsi untuk menangkap nilai pada arduino pada port yang s
 
 Selain itu terdapat screenshot skema dan juga file proteus beserta arduinnonya
 
-@@ Nama : Farhanang Wahyu Aprian
-@@ Kelas : TI D
-@@ NIM : V3920021
+## Nama : Farhanang Wahyu Aprian
+## Kelas : TI D
+## NIM : V3920021
